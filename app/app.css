@@ -1,30 +1,41 @@
-/* app css stylesheet */
 
-.menu {
-  list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
+
+label{
+  margin-right: 15px;
 }
 
-.menu:before {
-  content: "[";
+div.topic {
+  float: left;
+  width: 75%;
+  margin: 0;
+  padding: 0 15px;
+  overflow: hidden;
 }
 
-.menu:after {
-  content: "]";
+.topic-label {
+  float: left;
+  width: 50%;
+  margin: 0;
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  text-tranform: capitalize;
+  white-space: nowrap;
 }
 
-.menu > li {
-  display: inline;
+.topic-label:hover {
+  border-color: #ddd;
+  color: #888;
 }
 
-.menu > li:before {
-  content: "|";
-  padding-right: 0.3em;
+.topic-label:active {
+  border-color: #999;
+  color: #222;
 }
 
-.menu > li:nth-child(1):before {
-  content: "";
-  padding: 0;
-}
+@media (max-width: 768px) {
+  .input-container, .live-preview {
+    float: none;
+    width: 90%;
+    margin: 0 auto;
+  }

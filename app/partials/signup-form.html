@@ -1,0 +1,84 @@
+<form name="signupForm" class="form-horizontal" ng-submit="signupFormCtrl.addUser(signupForm)">
+
+  <section class="row well live-preview" ng-show="signupFormCtrl.user.name ">
+    <aside class="col-sm-3">
+
+        <img ng-src={{signupFormCtrl.user.imageurl}} alt="Photo of you " class="full">
+      </a>
+
+    </aside>
+
+    <div class="col-sm-9">
+      <h3>
+
+          {{signupFormCtrl.user.name || "Your Name"}}
+
+      </h3>
+      <cite class="text-muted"> {{signupFormCtrl.user.email || "Email Address"}}</cite>
+
+      <p>{{signupFormCtrl.user.session || "No session selected yet."}}</p>
+
+      <topics topics="signupFormCtrl.user.topics"></topics>
+    </div>
+  </section>
+
+  <div class="input-container">
+    <fieldset class="form-group">
+    <label for="name" class="col-sm-2 control-label">Name:</label>
+    <span class="col-sm-9">
+      <input type="text" class="form-control" id="name" ng-model="signupFormCtrl.user.name"
+      placeholder="Name">
+    </span>
+    </fieldset>
+    <fieldset class="form-group">
+    <label for="email" class="col-sm-2 control-label">Email:</label>
+    <span class="col-sm-9">
+      <input type="text" class="form-control" id="email" ng-model="signupFormCtrl.user.email"
+      placeholder="your university email address">
+    </span>
+    </fieldset>
+
+    <fieldset class="form-group">
+    <label for="photo" class="control-label col-sm-2">Photo URL:</label>
+    <span class="col-sm-9">
+      <input type="text" id="phto" class="form-control" ng-model="signupFormCtrl.user.imageurl"
+       placeholder="photo url">
+    </span>
+    </fieldset>
+
+
+
+    <fieldset class="form-group">
+      <label for="Session" class="control-label col-sm-2">Select a Session:</label>
+      <span class="col-sm-9">
+        <select class="form-control" id="session" value="session date, time and location" ng-model="signupFormCtrl.user.session">
+          <option>Thursday April 30th, at 12 pm. Room 320</option>
+          <option>Tuesday May 5th, at 12 pm. Room 320</option>
+          <option>Friday May 7th, at 12 pm. Room 320</option>
+
+        </select>
+      </span>
+    </fieldset>
+
+    <fieldset class="form-group">
+      <label class="control-label col-sm-2" >What will you use in your Canvas course:</label>
+      <div class="topic">
+
+
+        <label for="{{topic}}" class="topic-label form-control" ng-repeat="topic in topics">
+          <input type="checkbox" name="topic" id="{{topic}}"
+          ng-model="signupFormCtrl.user.topics[topic]" />
+          {{topic}}
+        </label>
+      </div>
+    </fieldset>
+
+    <fieldset class="form-group">
+      <span class="col-sm-9 col-sm-offset-2 button-from-hell">
+        <button class="btn btn-primary">Save</button>
+      </span>
+    </fieldset>
+  </div>
+
+
+</form>
