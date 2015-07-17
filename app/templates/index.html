@@ -1,0 +1,17 @@
+
+<ul class="list-unstyled" ng-controller='ListController as list'>
+  <div class="lead">
+    <p>Please see who has signed up a Canvas training session here!</p>
+  </div>
+     <li class="session row" ng-repeat="user in list.users">
+             <users></users>
+             <div class="col-sm-3">
+                 <h4>{{user.session}} </h4>
+             </div>
+             <div class="col-sm-6">
+                   <topics topics="user.topics"></topics>
+             </div>
+
+       </li>
+        <hr />
+ </ul>

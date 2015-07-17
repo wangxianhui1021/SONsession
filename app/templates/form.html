@@ -1,0 +1,12 @@
+<div class="row" ng-controller='ListController as list'>
+    <button class="btn btn-default" ng-click='signupFormCtrl.showForm = !signupFormCtrl.showForm'> Sign Up a Session</button>
+    <hr />
+    <signup-form ng-show="signupFormCtrl.showForm" users= "list.users" topics ="list.topics"></signup-form>
+    <hr />
+
+
+
+
+
+
+</div>

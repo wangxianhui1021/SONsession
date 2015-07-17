@@ -1,6 +1,6 @@
 (function(){
 
-  angular.module('myApp', [])
+  angular.module('myApp', ['ngRoute'])
     .controller('ListController', function(){
       this.users = users;
       this.topics = topics;

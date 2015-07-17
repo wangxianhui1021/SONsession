@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="bootstrap.css">
   <link rel="stylesheet" href="app.css">
   <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
+
 </head>
 <body>
   <div class="container">
@@ -25,41 +26,21 @@
           </div>
           <div>
             <ul class="nav navbar-nav">
-              <li><a href="#/view1">view1</a></li>
-              <li><a href="#/view2">view2</a></li>
+              <li> <a href="#/sessions">See who has already signed up</a></li>
+
             </ul>
           </div>
        </div>
      </nav>
      </div>
-     <div class="row" ng-controller='ListController as list'>
-         <button class="btn btn-default" ng-click='signupFormCtrl.showForm = !signupFormCtrl.showForm'> Sign Up a Session</button>
-         <hr />
-         <signup-form ng-show="signupFormCtrl.showForm" users= "list.users" topics ="list.topics"></signup-form>
-         <hr />
+     <div ng-view>
 
-         <ul class="list-unstyled">
-              <li class="session row" ng-repeat="user in list.users">
-                      <users></users>
-                      <div class="col-sm-3">
-                          <h4>{{user.session}} </h4>
-                      </div>
-                      <div class="col-sm-6">
-                            <topics topics="user.topics"></topics>
-                      </div>
-
-                </li>
-                 <hr />
-          </ul>
-
-
-
-
-     </div>
+   </div>
    </div>
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="app.js"></script>
-  
+  <script src="routes.js"></script>
+
 </body>
 </html>
